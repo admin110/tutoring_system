@@ -47,12 +47,12 @@ DD_belatedPNG.fix('img,.ie6png');
 				</a>
 				<div class="nav-collapse">
 					<ul class="nav" id="navID">
-						<li class=""><a href="index"><b>首页</b></a></li>
-					 	<li class=""><a href="cxzx_list.html"><b>创新咨讯</b></a></li>
-						<li class=""><a href="cxfw_list.html"><b>创新服务</b></a></li>
-						<li class=""><a href="xmdata.html"><b>项目数据库</b></a></li>
-						<li class=""><a href="tzjg_list.html"><b>投资机构</b></a></li>
-						<li class=""><a href="xm_write.html"><b>项目发布</b></a></li>
+                        <li class="active"><a href="index"><b>首页</b></a></li>
+						<li class=""><a href="teaku"><b>教员库</b></a></li>
+						<li class=""><a href="zyteaku"><b>专业老师库</b></a></li>
+						<li class=""><a href="stuku"><b>学员库</b></a></li>
+						<li class=""><a href="jjzx"><b>家教咨询</b></a></li>
+						<li class=""><a href="xxfb"><b>信息发布</b></a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 				<ul class="nav pull-right login-none nav-tips">

@@ -10,17 +10,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="zh-CN" /> 
-<script type="text/javascript" src="js/jquery1.4.js"></script>
-<script type="text/javascript" src="js/bioV4.min.js"></script>
-<script type="text/javascript" src="js/jquery.lazyload.mini.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/jquery1.4.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/bioV4.min.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/jquery.lazyload.mini.js"></script>
 <title>项目数据库</title>
 <meta name="Keywords" content="项目数据库"/>
 <meta name="Description" content="项目数据库。"/>
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<link rel="stylesheet" type="text/css" href="style/basic.css"/>
-<link rel="stylesheet" type="text/css" href="style/xmdata.css"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/xmdata.js"></script>
+<link rel="stylesheet" type="text/css" href="${__static__}/user/style/basic.css"/>
+<link rel="stylesheet" type="text/css" href="${__static__}/user/style/xmdata.css"/>
+<script type="text/javascript" src="${__static__}/user/js/function.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/xmdata.js"></script>
 <!--[if IE 6]>
 <script type="text/javascript" src="js/DD_belatedPNG.js?v=20130220"></script>
 <script type="text/javascript">
@@ -30,7 +30,7 @@ DD_belatedPNG.fix('img,.ie6png');
 
 </head>
 <body>
-	<script type="text/javascript" src="js/borsertocss.js"> </script><!-- 判断在IE9以下浏览器中根据像素的不同而设置的样式 -->	
+	<script type="text/javascript" src="${__static__}/user/js/borsertocss.js"> </script><!-- 判断在IE9以下浏览器中根据像素的不同而设置的样式 -->	
     
     
     <!--头部代码开始-->
@@ -44,19 +44,18 @@ DD_belatedPNG.fix('img,.ie6png');
 				</a>
 				<div class="nav-collapse">
 					<ul class="nav" id="navID">
-						
-                         <li class=""><a href="index.html"><b>首页</b></a></li>
-					 	<li class=""><a href="cxzx_list.html"><b>创新咨讯</b></a></li>
-						<li class=""><a href="cxfw_list.html"><b>创新服务</b></a></li>
-						<li class="active"><a href="xmdata.html"><b>项目数据库</b></a></li>
-						<li class=""><a href="tzjg_list.html"><b>投资机构</b></a></li>
-						<li class=""><a href="xm_write.html"><b>项目发布</b></a></li>
+                        <li class="active"><a href="index"><b>首页</b></a></li>
+						<li class=""><a href="teaku"><b>教员库</b></a></li>
+						<li class=""><a href="zyteaku"><b>专业老师库</b></a></li>
+						<li class=""><a href="stuku"><b>学员库</b></a></li>
+						<li class=""><a href="jjzx"><b>家教咨询</b></a></li>
+						<li class=""><a href="xxfb"><b>信息发布</b></a></li>
              
                        
 					</ul>
 				</div><!--/.nav-collapse -->
 				<ul class="nav pull-right login-none nav-tips">
-		<li class="ie6png divider-vertical" style="_width: 30px;_height: 40px;_background: url(images/icons.png) no-repeat 10px -106px;"><a class="dropdown-toggle clearfix" href="/login.html?url=aHR0cDovL3d3dy5iaW9kaXNjb3Zlci5jb20vbmV3cy5odG1sP3BhZ2U9Mg%3D%3D" style="padding: 7px 5px;"><img class="logo-before pull-left" src="images/avatar-icon.png" /></a></li>
+		<li class="ie6png divider-vertical" style="_width: 30px;_height: 40px;_background: url(${__static__}/user/images/icons.png) no-repeat 10px -106px;"><a class="dropdown-toggle clearfix" href="/login.html?url=aHR0cDovL3d3dy5iaW9kaXNjb3Zlci5jb20vbmV3cy5odG1sP3BhZ2U9Mg%3D%3D" style="padding: 7px 5px;"><img class="logo-before pull-left" src="${__static__}/user/images/avatar-icon.png" /></a></li>
 	</ul>
 <div class="popup-div tips-div" style="position: absolute;z-index: 10000001;display: none;"></div>
 <script type="text/javascript">
@@ -132,17 +131,17 @@ $('#dropdownID-1').hover(function(){
      <div class="top-div">
 	<div class="container clearfix">
        <div class="span3 logo-div logo-img" style="margin-left:0px;">
-        <a href="/" title="医疗器械创新网"><img src="images/logo.jpg" class="ie6png" style="display: block;"/></a>
+        <a href="/" title="医疗器械创新网"><img src="${__static__}/user/images/logo.jpg" class="ie6png" style="display: block;"/></a>
        </div>
        
         
         <div class="span11 pull-right top-ad" style="position: relative;_float: right;_height: 80px;_overflow: hidden;">
          
          <a href="javascript:;" class="pull-left" target="_blank" rel="nofollow">
-        <img alt="" src="images/img1.jpg" style="width: 100%; display: block;"/></a>
+        <img alt="" src="${__static__}/user/images/img1.jpg" style="width: 100%; display: block;"/></a>
         
          <a href="javascript:;" class="pull-left" style="display:none;" target="_blank">
-        <img alt="" src="images/img2.jpg" style="width: 100%; display: block;"/></a>
+        <img alt="" src="${__static__}/user/images/img2.jpg" style="width: 100%; display: block;"/></a>
               
               
                <div class="slides-icon-ad slides-ad-point" style="position: absolute;right:60px;">
@@ -252,7 +251,7 @@ $('#dropdownID-1').hover(function(){
   <!-- <div class="mmdata">欢迎<a href="">提交新项目</a>,让产品快速打响知名度,赢得投资人青睐</div>-->        
           
   <div class="mylistshow b-20  t-20" id="mmlistshow">
-  <div class="downjiao"><img src="images/downjiao.jpg" alt="hide" /></div>  
+  <div class="downjiao"><img src="${__static__}/user/images/downjiao.jpg" alt="hide" /></div>  
   <dl class="mydllist">
   <dd>关注领域：</dd>    
   <dd class="selected"><span class="ml"></span><span class="mm"><a href="">全部</a></span><span class="mr"></span></dd>
@@ -293,7 +292,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 			<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-             <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+             <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -330,7 +329,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -368,7 +367,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -405,7 +404,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -444,7 +443,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -481,7 +480,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -519,7 +518,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -556,7 +555,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -593,7 +592,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -630,7 +629,7 @@ $('#dropdownID-1').hover(function(){
    <div class="clearfix pt-3">
 		  <div class="index-news-img spanm3 pull-left pt-5">
 						<a href="javascript:;" title="标题标题标题" target="_blank" rel="bookmark">
-                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="images/xmdata1.jpg"/></a>
+                        <img class="lazyloadimg" alt="标题标题标题标题标题标题" src="${__static__}/user/images/xmdata1.jpg"/></a>
 		 </div>
          
          
@@ -833,15 +832,6 @@ $('#dropdownID-1').hover(function(){
 <p>Copyright ©2013　　备8888888888号</p>
     
 		</div> 
-
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">
 //回到顶部

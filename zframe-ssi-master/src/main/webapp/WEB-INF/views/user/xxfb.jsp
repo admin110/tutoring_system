@@ -10,18 +10,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="zh-CN" /> 
-<script type="text/javascript" src="js/jquery1.4.js"></script>
-<script type="text/javascript" src="js/bioV4.min.js"></script>
-<script type="text/javascript" src="js/jquery.lazyload.mini.js"></script>
-<script type="text/javascript" src="js/dyfrom.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/jquery1.4.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/bioV4.min.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/jquery.lazyload.mini.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/dyfrom.js"></script>
 <title>咨询详情页</title>
 <meta name="Keywords" content="咨询详情页"/>
 <meta name="Description" content="咨询详情页"/>
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<link rel="stylesheet" type="text/css" href="style/basic.css"/>
-<link rel="stylesheet" type="text/css" href="style/xm_write.css"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/xm_write.js"></script>
+<link rel="stylesheet" type="text/css" href="${__static__}/user/style/basic.css"/>
+<link rel="stylesheet" type="text/css" href="${__static__}/user/style/xm_write.css"/>
+<script type="text/javascript" src="${__static__}/user/js/function.js"></script>
+<script type="text/javascript" src="${__static__}/user/js/xm_write.js"></script>
 <!--[if IE 6]>
 <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
 <script type="text/javascript">
@@ -31,7 +31,7 @@ DD_belatedPNG.fix('img,.ie6png');
 
 </head>
 <body>
-	<script type="text/javascript" src="js/borsertocss.js"> </script><!-- 判断在IE9以下浏览器中根据像素的不同而设置的样式 -->	
+	<script type="text/javascript" src="${__static__}/user/js/borsertocss.js"> </script><!-- 判断在IE9以下浏览器中根据像素的不同而设置的样式 -->	
  
   <!--头部代码开始-->
    
@@ -45,19 +45,18 @@ DD_belatedPNG.fix('img,.ie6png');
 				</a>
 				<div class="nav-collapse">
 					<ul class="nav" id="navID">
-						
-                        <li class=""><a href="index.html"><b>首页</b></a></li>
-					 	<li class=""><a href="cxzx_list.html"><b>创新咨讯</b></a></li>
-						<li class=""><a href="cxfw_list.html"><b>创新服务</b></a></li>
-						<li class=""><a href="xmdata.html"><b>项目数据库</b></a></li>
-						<li class=""><a href="tzjg_list.html"><b>投资机构</b></a></li>
-						<li class="active"><a href="xm_write.html"><b>项目发布</b></a></li>
+                        <li class="active"><a href="index"><b>首页</b></a></li>
+						<li class=""><a href="teaku"><b>教员库</b></a></li>
+						<li class=""><a href="zyteaku"><b>专业老师库</b></a></li>
+						<li class=""><a href="stuku"><b>学员库</b></a></li>
+						<li class=""><a href="jjzx"><b>家教咨询</b></a></li>
+						<li class=""><a href="xxfb"><b>信息发布</b></a></li>
                         
                          
 					</ul>
 				</div><!--/.nav-collapse -->
 				<ul class="nav pull-right login-none nav-tips">
-		<li class="ie6png divider-vertical" style="_width: 30px;_height: 40px;_background: url(images/icons.png) no-repeat 10px -106px;"><a class="dropdown-toggle clearfix" href="/login.html?url=aHR0cDovL3d3dy5iaW9kaXNjb3Zlci5jb20vbmV3cy5odG1sP3BhZ2U9Mg%3D%3D" style="padding: 7px 5px;"><img class="logo-before pull-left" src="images/avatar-icon.png" /></a></li>
+		<li class="ie6png divider-vertical" style="_width: 30px;_height: 40px;_background: url(${__static__}/user/images/icons.png) no-repeat 10px -106px;"><a class="dropdown-toggle clearfix" href="/login.html?url=aHR0cDovL3d3dy5iaW9kaXNjb3Zlci5jb20vbmV3cy5odG1sP3BhZ2U9Mg%3D%3D" style="padding: 7px 5px;"><img class="logo-before pull-left" src="${__static__}/user/images/avatar-icon.png" /></a></li>
 	</ul>
 <div class="popup-div tips-div" style="position: absolute;z-index: 10000001;display: none;"></div>
 			
@@ -76,15 +75,15 @@ DD_belatedPNG.fix('img,.ie6png');
 	<div class="container clearfix">
 		
        <div class="span3 logo-div logo-img" style="margin-left:0px;">
-        <a href="/" title="医疗器械创新网"><img src="images/logo.jpg" class="ie6png" style="display: block;"/></a>
+        <a href="/" title="医疗器械创新网"><img src="${__static__}/user/images/logo.jpg" class="ie6png" style="display: block;"/></a>
        </div>
 		
         <div class="span11 pull-right top-ad" style="position: relative;_float: right;_height: 80px;_overflow: hidden;">
  <a href="javascript:;" class="pull-left" target="_blank" rel="nofollow">
-        <img alt="" src="images/img1.jpg" style="width: 100%; display: block;"/></a>
+        <img alt="" src="${__static__}/user/images/img1.jpg" style="width: 100%; display: block;"/></a>
         
          <a href="javascript:;" class="pull-left" style="display:none;" target="_blank">
-        <img alt="" src="images/img2.jpg" style="width: 100%; display: block;"/></a>
+        <img alt="" src="${__static__}/user/images/img2.jpg" style="width: 100%; display: block;"/></a>
 
 	 <div class="slides-icon-ad slides-ad-point" style="position: absolute;right:60px;">
 				<a href="javascript:void(0);" class="icon-css-on ie6png">&nbsp;</a>
@@ -243,7 +242,7 @@ DD_belatedPNG.fix('img,.ie6png');
 
                 <div class="controls">
                     <div id="avatarUpload">
-                        <img src="images/uphoto.jpg" rel="img-target-avatar"
+                        <img src="${__static__}/user/images/uphoto.jpg" rel="img-target-avatar"
                              data-value="0" data-check="eb1ae6331b63d1ad95006586c4add55b"
                              class="active img-target img-on">
                         <span class="help-inline"></span>
@@ -426,7 +425,7 @@ DD_belatedPNG.fix('img,.ie6png');
 
                 <div class="controls">
                     <div id="logoUpload">
-                        <img src="images/xmlogo.jpg"
+                        <img src="${__static__}/user/images/xmlogo.jpg"
                              rel="img-target-logo"
                              data-value="0"
                              data-check="a86d4a9f4efdc578c791dd86edca102b"
@@ -501,9 +500,9 @@ DD_belatedPNG.fix('img,.ie6png');
                 <label for="pictureUpload"  class="control-label" >上传截图<p class="text-error">必填项</p></label>
             <div class="controls pull-left" style="width:76%">
                     <div rel="img-picture-target" id="pictureUpload">
-                        <img src="images/160160.png" item="0" >
-                        <img src="images/160160.png" item="1">
-                        <img src="images/160160.png" item="2">
+                        <img src="${__static__}/user/images/160160.png" item="0" >
+                        <img src="${__static__}/user/images/160160.png" item="1">
+                        <img src="${__static__}/user/images/160160.png" item="2">
                       <span class="help-inline"></span>
                 </div>
                 <div class="mmclear"></div>
@@ -528,7 +527,7 @@ DD_belatedPNG.fix('img,.ie6png');
     
     <div class="basic" style="border-top:1px solid #ccc; text-align:right; margin-left:15px; padding:10px 0px 5px 0px;">
      
-      <input type="image" src="images/blutbottom.jpg" value="" style="width:81px; height:46px;"/>
+      <input type="image" src="${__static__}/user/images/blutbottom.jpg" value="" style="width:81px; height:46px;"/>
      
     </div>
     

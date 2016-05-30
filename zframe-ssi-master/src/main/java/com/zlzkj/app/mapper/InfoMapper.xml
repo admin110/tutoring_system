@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.InfoMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.Info" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="info_title" property="infoTitle" jdbcType="VARCHAR" />
+    <result column="info_body" property="infoBody" jdbcType="VARCHAR" />
+    <result column="info_time" property="infoTime" jdbcType="TIMESTAMP" />
+    <result column="click_times" property="clickTimes" jdbcType="INTEGER" />
+    <result column="info_sh" property="infoSh" jdbcType="INTEGER" />
+    <result column="info_author" property="infoAuthor" jdbcType="VARCHAR" />
+    <result column="per_Id" property="perId" jdbcType="INTEGER" />
+    <result column="is_show" property="isShow" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, info_title, info_body, info_time, click_times, info_sh, info_author, per_Id, 
+    is_show
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.Info" >
+    insert into x_info (id, info_title, info_body, 
+      info_time, click_times, info_sh, 
+      info_author, per_Id, is_show
+      )
+    values (#{id,jdbcType=INTEGER}, #{infoTitle,jdbcType=VARCHAR}, #{infoBody,jdbcType=VARCHAR}, 
+      #{infoTime,jdbcType=TIMESTAMP}, #{clickTimes,jdbcType=INTEGER}, #{infoSh,jdbcType=INTEGER}, 
+      #{infoAuthor,jdbcType=VARCHAR}, #{perId,jdbcType=INTEGER}, #{isShow,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.Info" >
+    insert into x_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="infoTitle != null" >
+        info_title,
+      </if>
+      <if test="infoBody != null" >
+        info_body,
+      </if>
+      <if test="infoTime != null" >
+        info_time,
+      </if>
+      <if test="clickTimes != null" >
+        click_times,
+      </if>
+      <if test="infoSh != null" >
+        info_sh,
+      </if>
+      <if test="infoAuthor != null" >
+        info_author,
+      </if>
+      <if test="perId != null" >
+        per_Id,
+      </if>
+      <if test="isShow != null" >
+        is_show,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="infoTitle != null" >
+        #{infoTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="infoBody != null" >
+        #{infoBody,jdbcType=VARCHAR},
+      </if>
+      <if test="infoTime != null" >
+        #{infoTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clickTimes != null" >
+        #{clickTimes,jdbcType=INTEGER},
+      </if>
+      <if test="infoSh != null" >
+        #{infoSh,jdbcType=INTEGER},
+      </if>
+      <if test="infoAuthor != null" >
+        #{infoAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="perId != null" >
+        #{perId,jdbcType=INTEGER},
+      </if>
+      <if test="isShow != null" >
+        #{isShow,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.Info" >
+    update x_info
+    <set >
+      <if test="infoTitle != null" >
+        info_title = #{infoTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="infoBody != null" >
+        info_body = #{infoBody,jdbcType=VARCHAR},
+      </if>
+      <if test="infoTime != null" >
+        info_time = #{infoTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clickTimes != null" >
+        click_times = #{clickTimes,jdbcType=INTEGER},
+      </if>
+      <if test="infoSh != null" >
+        info_sh = #{infoSh,jdbcType=INTEGER},
+      </if>
+      <if test="infoAuthor != null" >
+        info_author = #{infoAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="perId != null" >
+        per_Id = #{perId,jdbcType=INTEGER},
+      </if>
+      <if test="isShow != null" >
+        is_show = #{isShow,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.Info" >
+    update x_info
+    set info_title = #{infoTitle,jdbcType=VARCHAR},
+      info_body = #{infoBody,jdbcType=VARCHAR},
+      info_time = #{infoTime,jdbcType=TIMESTAMP},
+      click_times = #{clickTimes,jdbcType=INTEGER},
+      info_sh = #{infoSh,jdbcType=INTEGER},
+      info_author = #{infoAuthor,jdbcType=VARCHAR},
+      per_Id = #{perId,jdbcType=INTEGER},
+      is_show = #{isShow,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

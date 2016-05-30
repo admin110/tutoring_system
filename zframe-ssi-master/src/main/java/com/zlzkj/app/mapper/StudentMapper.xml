@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.Student" >
+    <id column="rg_id" property="rgId" jdbcType="INTEGER" />
+    <result column="stu_id" property="stuId" jdbcType="VARCHAR" />
+    <result column="stu_grade" property="stuGrade" jdbcType="INTEGER" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="reamark" property="reamark" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="photo" property="photo" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="connect_phone" property="connectPhone" jdbcType="VARCHAR" />
+    <result column="stu_class" property="stuClass" jdbcType="VARCHAR" />
+    <result column="stu_time" property="stuTime" jdbcType="VARCHAR" />
+    <result column="stu_stu" property="stuStu" jdbcType="VARCHAR" />
+    <result column="stu_info" property="stuInfo" jdbcType="VARCHAR" />
+    <result column="stu_tc_sex" property="stuTcSex" jdbcType="INTEGER" />
+    <result column="stu_tc_require" property="stuTcRequire" jdbcType="VARCHAR" />
+    <result column="stu_way" property="stuWay" jdbcType="VARCHAR" />
+    <result column="stu_pay" property="stuPay" jdbcType="INTEGER" />
+    <result column="stu_account" property="stuAccount" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rg_id, stu_id, stu_grade, role_name, reamark, real_name, photo, area, address, sex, 
+    connect_phone, stu_class, stu_time, stu_stu, stu_info, stu_tc_sex, stu_tc_require, 
+    stu_way, stu_pay, stu_account
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_student
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_student
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.Student" >
+    insert into x_student (rg_id, stu_id, stu_grade, 
+      role_name, reamark, real_name, 
+      photo, area, address, 
+      sex, connect_phone, stu_class, 
+      stu_time, stu_stu, stu_info, 
+      stu_tc_sex, stu_tc_require, stu_way, 
+      stu_pay, stu_account)
+    values (#{rgId,jdbcType=INTEGER}, #{stuId,jdbcType=VARCHAR}, #{stuGrade,jdbcType=INTEGER}, 
+      #{roleName,jdbcType=VARCHAR}, #{reamark,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{photo,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{connectPhone,jdbcType=VARCHAR}, #{stuClass,jdbcType=VARCHAR}, 
+      #{stuTime,jdbcType=VARCHAR}, #{stuStu,jdbcType=VARCHAR}, #{stuInfo,jdbcType=VARCHAR}, 
+      #{stuTcSex,jdbcType=INTEGER}, #{stuTcRequire,jdbcType=VARCHAR}, #{stuWay,jdbcType=VARCHAR}, 
+      #{stuPay,jdbcType=INTEGER}, #{stuAccount,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.Student" >
+    insert into x_student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        rg_id,
+      </if>
+      <if test="stuId != null" >
+        stu_id,
+      </if>
+      <if test="stuGrade != null" >
+        stu_grade,
+      </if>
+      <if test="roleName != null" >
+        role_name,
+      </if>
+      <if test="reamark != null" >
+        reamark,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone,
+      </if>
+      <if test="stuClass != null" >
+        stu_class,
+      </if>
+      <if test="stuTime != null" >
+        stu_time,
+      </if>
+      <if test="stuStu != null" >
+        stu_stu,
+      </if>
+      <if test="stuInfo != null" >
+        stu_info,
+      </if>
+      <if test="stuTcSex != null" >
+        stu_tc_sex,
+      </if>
+      <if test="stuTcRequire != null" >
+        stu_tc_require,
+      </if>
+      <if test="stuWay != null" >
+        stu_way,
+      </if>
+      <if test="stuPay != null" >
+        stu_pay,
+      </if>
+      <if test="stuAccount != null" >
+        stu_account,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        #{rgId,jdbcType=INTEGER},
+      </if>
+      <if test="stuId != null" >
+        #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuGrade != null" >
+        #{stuGrade,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="reamark != null" >
+        #{reamark,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="connectPhone != null" >
+        #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="stuClass != null" >
+        #{stuClass,jdbcType=VARCHAR},
+      </if>
+      <if test="stuTime != null" >
+        #{stuTime,jdbcType=VARCHAR},
+      </if>
+      <if test="stuStu != null" >
+        #{stuStu,jdbcType=VARCHAR},
+      </if>
+      <if test="stuInfo != null" >
+        #{stuInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="stuTcSex != null" >
+        #{stuTcSex,jdbcType=INTEGER},
+      </if>
+      <if test="stuTcRequire != null" >
+        #{stuTcRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="stuWay != null" >
+        #{stuWay,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPay != null" >
+        #{stuPay,jdbcType=INTEGER},
+      </if>
+      <if test="stuAccount != null" >
+        #{stuAccount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.Student" >
+    update x_student
+    <set >
+      <if test="stuId != null" >
+        stu_id = #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuGrade != null" >
+        stu_grade = #{stuGrade,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="reamark != null" >
+        reamark = #{reamark,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="stuClass != null" >
+        stu_class = #{stuClass,jdbcType=VARCHAR},
+      </if>
+      <if test="stuTime != null" >
+        stu_time = #{stuTime,jdbcType=VARCHAR},
+      </if>
+      <if test="stuStu != null" >
+        stu_stu = #{stuStu,jdbcType=VARCHAR},
+      </if>
+      <if test="stuInfo != null" >
+        stu_info = #{stuInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="stuTcSex != null" >
+        stu_tc_sex = #{stuTcSex,jdbcType=INTEGER},
+      </if>
+      <if test="stuTcRequire != null" >
+        stu_tc_require = #{stuTcRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="stuWay != null" >
+        stu_way = #{stuWay,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPay != null" >
+        stu_pay = #{stuPay,jdbcType=INTEGER},
+      </if>
+      <if test="stuAccount != null" >
+        stu_account = #{stuAccount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.Student" >
+    update x_student
+    set stu_id = #{stuId,jdbcType=VARCHAR},
+      stu_grade = #{stuGrade,jdbcType=INTEGER},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      reamark = #{reamark,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      stu_class = #{stuClass,jdbcType=VARCHAR},
+      stu_time = #{stuTime,jdbcType=VARCHAR},
+      stu_stu = #{stuStu,jdbcType=VARCHAR},
+      stu_info = #{stuInfo,jdbcType=VARCHAR},
+      stu_tc_sex = #{stuTcSex,jdbcType=INTEGER},
+      stu_tc_require = #{stuTcRequire,jdbcType=VARCHAR},
+      stu_way = #{stuWay,jdbcType=VARCHAR},
+      stu_pay = #{stuPay,jdbcType=INTEGER},
+      stu_account = #{stuAccount,jdbcType=INTEGER}
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+</mapper>

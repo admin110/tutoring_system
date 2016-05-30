@@ -1,0 +1,131 @@
+/* CSS Document */
+
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%}
+a{color:#172c45;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+.layout:after,.hd:after,.bd:after,.ft:after,.cf:after,.Q-tList:after,.Q-tList ul:after,.Q-tList ol:after,.Q-pList:after,.Q-pList ul:after,.Q-tpList:after,.Q-tpList ul:after,.Q-tpWrap:after{content:"";display:table;clear:both}
+.layout,.hd,.bd,.ft,.cf,.Q-tList,.Q-tList ul,.Q-tList ol,.Q-pList,.Q-pList ul,.Q-tpList,.Q-tpList ul,.Q-tpWrap{*zoom:1}
+@media screen{
+.fl,.layout .fl,.chief{float:left;display:inline}
+.fr,.layout .fr,.extra{float:right;display:inline}
+.fn{font-weight:bold;}
+.layout{width:1000px;margin:0 auto;}
+.leftArea{width:660px;float:left;}
+.rightArea{width:318px;border-top:1px solid #6daaea;background:#fff;float:right;}
+.mt8{margin-top:8px}
+.mt12{margin-top:12px}				
+.mt15{margin-top:15px}
+.mb10{margin-bottom:10px}
+#guess{position:absolute;top:-9999px;left:-9999px;}
+}
+
+.body,.foot{
+	background-color:#DDDDDD;}
+
+.layoutBg{
+	width:100%;
+	height:4780px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:8888;
+	display:none;
+	background:url(../images/alphabg.png);}
+	
+
+/*家教*/
+
+/*head start*/
+
+	.tutoring{width:1000px;height:48px;margin:0 auto;padding:23px 0 19px;}
+.tutoring .logo{float:left;display:inline;margin-left:160px;}
+.tutoring .logo .qqlogo{display:block;width:134px;height:44px;background-image:url(../images/qqlogo_1x.png);background-image:-webkit-image-set(url(../images/qqlogo_1x.png) 1x,url(../images/qqlogo_2x.png) 2x);background-repeat:no-repeat;}
+.tutoring .search{float:left;padding:5px 0 0 42px;}
+.tutoring .searchTxt{float:left;width:290px;height:35px;border:1px solid #c1c4cb;border-right:0;position:relative;z-index:20;background:#fff;}
+.tutoring .searchTxtHover{float:left;width:290px;height:35px;border:1px solid #3297d8;border-right:0;position:relative;z-index:20;background:#fff;}
+.tutoring .search .searchMenu{float:left;}
+.tutoring .search .searchMenu .searchSelected{color:#a8a8a8;cursor:pointer;font-size:14px;font-weight:bold;height:35px;line-height:35px;padding:0 10px;width:48px;background-position:-877px -199px;background-image: url(../images/qqbg_1.6.1.png);background-repeat: no-repeat;
+}
+.tutoring .search .searchMenu .searchSelectedUp{color:#a8a8a8;cursor:pointer;font-size:14px;font-weight:bold;height:35px;line-height:35px;padding:0 10px;width:48px;background-position:-552px -200px;}
+.tutoring .search .searchMenu .searchTab{display:none; position:absolute;top:35px;left:-1px;width:58px;border:1px solid #3297d8;border-top:0;background:#fff;height:258px;z-index:20;}
+.tutoring .search .searchMenu .searchTab li{width:58px;height:28px;line-height:28px;color:#a8a8a8;font-size:14px;font-weight:bold;text-indent:10px;cursor:pointer;}
+.tutoring .search .searchMenu .searchTab li.selected{background:#edf3fc;color:#6994c1;}
+.tutoring .search .searchSmart {position:absolute;top:35px;left:60px;width:318px;border:1px solid #cdcdcd;background:#fff;visibility:hidden;z-index:11;}
+.tutoring .search .searchSmart ul{width:100%;float:left;}
+.tutoring .search .searchSmart li{width:100%;height:28px;line-height:28px;float:left;color:#374562;font-size:14px;text-indent:10px;cursor:pointer;white-space:nowrap;overflow:hidden;}
+.tutoring .search .searchSmart li.selected{background:#edf3fc;}
+.tutoring .search .searchSmart li.searchSmartTip{background:#f7f7f7;color:#a9  bacd;}
+.tutoring .search .searchSmart li.searchSmartTip .smartX{width:13px;height:12px;overflow:hidden;float:right;background-position:-700px -210px;float:right;display:inline;margin:8px 10px 0 0;cursor:pointer;}
+.tutoring .search input{float:left;border:0;background:#fff;color:#333;font-size:14px;line-height:22px;width:175px;height:25px;margin:0;outline:medium none;padding:4px;}
+.tutoring .search .tutoringLogo{float:right;margin:5px 6px 0 0;_margin-right:3px;}
+.tutoring .searchBtn{float:left;}
+.tutoring .searchBtn button{background:url(../images/sogouSearchBtn.png) no-repeat;border:0;color:#fff;cursor:pointer;float:left;font-size:16px;height:37px;text-indent:-9999px;width:90px;}
+.tutoring .searchBtn .searchBtnHover{background:url(../images/sogouSearchBtn.png) no-repeat;}
+
+.tutoring .searchTxt .radius{width:1px;height:1px;overflow:hidden;background:#f4f4f4;position:absolute;top:-2px;left:-1px;}
+.tutoring .searchTxtHover .radius{width:1px;height:1px;overflow:hidden;background:#cce5f5;position:absolute;top:-2px;left:-1px;}
+
+
+/*地区选择灰度*/
+.areaGray{padding-top:5px;}
+.areaGray a.login, .areaGray a.login:hover,.areaGray a.ilikeLogin, .areaGray a.ilikeLogin:hover, .areaGray .ilike, .areaGray .ilike:hover{background-image:url(../images/loginGrayIcon.png);background-repeat:no-repeat;}
+
+
+
+/*搜索、一键登录灰度*/
+.loginGray{padding-top:5px;}
+.loginGray a.login, .loginGray a.login:hover,.loginGray a.ilikeLogin, .loginGray a.ilikeLogin:hover, .loginGray .ilike, .loginGray .ilike:hover{background-image:url(../images/loginGrayIcon.png);background-repeat:no-repeat;}
+.loginGray .loginGraySmartTop{background-image:url(../images/qq2012/qqbg_1.6.1.png); background-repeat:no-repeat;}
+.loginGray .login{display:block;width:35px;height:35px;border:1px solid #ededed;float:left;background-position:-155px -1px;}
+.loginGray .login:hover{border:1px solid #c4dbed;}
+.loginGray .logined{display:block;width:35px;height:35px;border:1px solid #ededed;float:left;}
+.loginGray .logined img{width:33px;height:33px;margin:1px;}
+.loginGray .dingyue{display:block;width:22px;height:24px;float:left;text-indent:20px;}
+.loginGray .dingyue:hover{color:#fff;background-color:#458fce;}
+.loginGray .ilike{padding:0 7px;display:block;height:24px;float:left;text-indent:20px;background-position:left -7px;}
+.loginGray .ilike:hover{color:#fff;background-color:#458fce;}
+.loginGray .loginGraySmartBox{width:131px;background:#fff;position:absolute;top:37px;z-index:100;}
+.loginGray .loginGraySmartTop{width:131px;height:11px;background:url(../images/loginGrayTop.png) no-repeat 60px top;position:absolute;left:0px;z-index:202;}
+.loginGray .loginGraySmartContent{width:129px;border:1px solid #c2c2c2;background:#fff;position:absolute;top:10px;z-index:201;}
+.loginGray .loginGraySmartInner{width:115px;padding:0 7px;}
+.loginGray .loginGraySmartInner ul{width:100%;padding:2px 0;}
+.loginGray .loginGraySmartInner li{width:100%;height:33px;line-height:33px;color:#666;border-top:1px dashed #ddd;text-indent:7px;}
+.loginGray .loginGraySmartInner li a{color:#666;}
+.loginGray .loginGraySmartInner li a:hover{text-decoration:none;}
+.loginGray .loginGraySmartInner li a:hover span{color:#cd0200;}
+.loginGray .loginGraySmartInner li a.txtLeft{width:55px;float:left;text-align:right;}
+.loginGray .loginGraySmartInner li a:hover.txtLeft{color:#666;}
+.loginGray .loginGraySmartInner li a .txtRight{width:40px;float:right;padding-right:15px;text-align:right;color:#e36464;font-family:Tahoma;}
+.loginGray .loginGraySmartInner li a:hover .txtRight{font-weight:bold;}
+.loginGray .dingyueGrayNum{position:absolute;width:16px;height:14px;line-height:14px;background:url(..images/loginNumBg.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src='../images/loginNumBg.png');text-align:center;display:none;}
+	.loginGray .dingyueGrayNum div{font-family:Tahoma;font-size:8px;color:#fff;-webkit-transform:scale(0.66);-o-transform:scale(1);}
+.loginGray .userVipHead{display:none;width:14px;height:16px;background:url(../images/Member.png) no-repeat;position:absolute;right:2px;bottom:2px;}
+.loginGray .userVip{display:none;padding:1px 0 1px 18px;background:url(../images/Member.png) no-repeat;}
+.loginGray .dingyueGrayNum{top:4px;right:1px;}
+    .loginGray .userVipHead{display:none;width:14px;height:16px;background:url(../images/Member.png) no-repeat;position:absolute;right:2px;bottom:2px;}
+.loginGray .userVip{display:none;padding:1px 0 1px 18px;background:url(../images/Member.png) no-repeat;}
+#loginGrayIcon,#loginGrayIconLogin{position:relative;margin:0 8px;z-index:200;}
+#dingyueGrayIcon,#dingyueGrayIconLogin{position:relative;padding:7px 8px 6px;z-index:200;}
+#loginGrayTitle{border-top:0;color:#216baa;overflow:hidden;}
+#loginGrayTitle a{color:#216baa;}
+#loginGrayTitle a:hover{color:#cd0200;;}
+#dingyueGrayTitle{color:#206bab;border-top:0;}
+.fleft{float:left;}
+.fright{float:right;}
+.undis{display:none}
+.dis{display:block}
+
+/*一键登录图标透明*/
+.loginGray .loginGraySmartTop{background:url(../images/loginTop.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src='../images/loginTop.png');}
+.loginGray .dingyue{background:url(../images/dyIcon.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src='../images/dyIcon.png');}
+.loginGray .dingyue:hover{background:url(../images/dyIconHover.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src='../images/dyIconHover.png');}
+
+
+
+/*head end*/

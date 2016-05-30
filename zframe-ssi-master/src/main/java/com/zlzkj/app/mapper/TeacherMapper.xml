@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.TeacherMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.Teacher" >
+    <id column="rg_id" property="rgId" jdbcType="INTEGER" />
+    <result column="th_id" property="thId" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="photo" property="photo" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="birth_year" property="birthYear" jdbcType="VARCHAR" />
+    <result column="major" property="major" jdbcType="VARCHAR" />
+    <result column="education" property="education" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="graduate_school" property="graduateSchool" jdbcType="VARCHAR" />
+    <result column="is_teacher" property="isTeacher" jdbcType="INTEGER" />
+    <result column="QQ" property="qq" jdbcType="VARCHAR" />
+    <result column="connect_phone" property="connectPhone" jdbcType="VARCHAR" />
+    <result column="teach_sub" property="teachSub" jdbcType="VARCHAR" />
+    <result column="about_me" property="aboutMe" jdbcType="VARCHAR" />
+    <result column="teach_time" property="teachTime" jdbcType="VARCHAR" />
+    <result column="teach_area" property="teachArea" jdbcType="VARCHAR" />
+    <result column="salary_need" property="salaryNeed" jdbcType="INTEGER" />
+    <result column="teach_way" property="teachWay" jdbcType="VARCHAR" />
+    <result column="teach_account" property="teachAccount" jdbcType="INTEGER" />
+    <result column="teach_sh" property="teachSh" jdbcType="INTEGER" />
+    <result column="teach_grade" property="teachGrade" jdbcType="INTEGER" />
+    <result column="teach_scores" property="teachScores" jdbcType="INTEGER" />
+    <result column="teach_appraise" property="teachAppraise" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rg_id, th_id, remarks, role_name, real_name, photo, area, sex, birth_year, major, 
+    education, id_card, position, graduate_school, is_teacher, QQ, connect_phone, teach_sub, 
+    about_me, teach_time, teach_area, salary_need, teach_way, teach_account, teach_sh, 
+    teach_grade, teach_scores, teach_appraise
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_teacher
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_teacher
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.Teacher" >
+    insert into x_teacher (rg_id, th_id, remarks, 
+      role_name, real_name, photo, 
+      area, sex, birth_year, 
+      major, education, id_card, 
+      position, graduate_school, is_teacher, 
+      QQ, connect_phone, teach_sub, 
+      about_me, teach_time, teach_area, 
+      salary_need, teach_way, teach_account, 
+      teach_sh, teach_grade, teach_scores, 
+      teach_appraise)
+    values (#{rgId,jdbcType=INTEGER}, #{thId,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{roleName,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{birthYear,jdbcType=VARCHAR}, 
+      #{major,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{graduateSchool,jdbcType=VARCHAR}, #{isTeacher,jdbcType=INTEGER}, 
+      #{qq,jdbcType=VARCHAR}, #{connectPhone,jdbcType=VARCHAR}, #{teachSub,jdbcType=VARCHAR}, 
+      #{aboutMe,jdbcType=VARCHAR}, #{teachTime,jdbcType=VARCHAR}, #{teachArea,jdbcType=VARCHAR}, 
+      #{salaryNeed,jdbcType=INTEGER}, #{teachWay,jdbcType=VARCHAR}, #{teachAccount,jdbcType=INTEGER}, 
+      #{teachSh,jdbcType=INTEGER}, #{teachGrade,jdbcType=INTEGER}, #{teachScores,jdbcType=INTEGER}, 
+      #{teachAppraise,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.Teacher" >
+    insert into x_teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        rg_id,
+      </if>
+      <if test="thId != null" >
+        th_id,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="roleName != null" >
+        role_name,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birthYear != null" >
+        birth_year,
+      </if>
+      <if test="major != null" >
+        major,
+      </if>
+      <if test="education != null" >
+        education,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="graduateSchool != null" >
+        graduate_school,
+      </if>
+      <if test="isTeacher != null" >
+        is_teacher,
+      </if>
+      <if test="qq != null" >
+        QQ,
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone,
+      </if>
+      <if test="teachSub != null" >
+        teach_sub,
+      </if>
+      <if test="aboutMe != null" >
+        about_me,
+      </if>
+      <if test="teachTime != null" >
+        teach_time,
+      </if>
+      <if test="teachArea != null" >
+        teach_area,
+      </if>
+      <if test="salaryNeed != null" >
+        salary_need,
+      </if>
+      <if test="teachWay != null" >
+        teach_way,
+      </if>
+      <if test="teachAccount != null" >
+        teach_account,
+      </if>
+      <if test="teachSh != null" >
+        teach_sh,
+      </if>
+      <if test="teachGrade != null" >
+        teach_grade,
+      </if>
+      <if test="teachScores != null" >
+        teach_scores,
+      </if>
+      <if test="teachAppraise != null" >
+        teach_appraise,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        #{rgId,jdbcType=INTEGER},
+      </if>
+      <if test="thId != null" >
+        #{thId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birthYear != null" >
+        #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null" >
+        #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="graduateSchool != null" >
+        #{graduateSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="isTeacher != null" >
+        #{isTeacher,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="connectPhone != null" >
+        #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="teachSub != null" >
+        #{teachSub,jdbcType=VARCHAR},
+      </if>
+      <if test="aboutMe != null" >
+        #{aboutMe,jdbcType=VARCHAR},
+      </if>
+      <if test="teachTime != null" >
+        #{teachTime,jdbcType=VARCHAR},
+      </if>
+      <if test="teachArea != null" >
+        #{teachArea,jdbcType=VARCHAR},
+      </if>
+      <if test="salaryNeed != null" >
+        #{salaryNeed,jdbcType=INTEGER},
+      </if>
+      <if test="teachWay != null" >
+        #{teachWay,jdbcType=VARCHAR},
+      </if>
+      <if test="teachAccount != null" >
+        #{teachAccount,jdbcType=INTEGER},
+      </if>
+      <if test="teachSh != null" >
+        #{teachSh,jdbcType=INTEGER},
+      </if>
+      <if test="teachGrade != null" >
+        #{teachGrade,jdbcType=INTEGER},
+      </if>
+      <if test="teachScores != null" >
+        #{teachScores,jdbcType=INTEGER},
+      </if>
+      <if test="teachAppraise != null" >
+        #{teachAppraise,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.Teacher" >
+    update x_teacher
+    <set >
+      <if test="thId != null" >
+        th_id = #{thId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birthYear != null" >
+        birth_year = #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null" >
+        major = #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="graduateSchool != null" >
+        graduate_school = #{graduateSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="isTeacher != null" >
+        is_teacher = #{isTeacher,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        QQ = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="teachSub != null" >
+        teach_sub = #{teachSub,jdbcType=VARCHAR},
+      </if>
+      <if test="aboutMe != null" >
+        about_me = #{aboutMe,jdbcType=VARCHAR},
+      </if>
+      <if test="teachTime != null" >
+        teach_time = #{teachTime,jdbcType=VARCHAR},
+      </if>
+      <if test="teachArea != null" >
+        teach_area = #{teachArea,jdbcType=VARCHAR},
+      </if>
+      <if test="salaryNeed != null" >
+        salary_need = #{salaryNeed,jdbcType=INTEGER},
+      </if>
+      <if test="teachWay != null" >
+        teach_way = #{teachWay,jdbcType=VARCHAR},
+      </if>
+      <if test="teachAccount != null" >
+        teach_account = #{teachAccount,jdbcType=INTEGER},
+      </if>
+      <if test="teachSh != null" >
+        teach_sh = #{teachSh,jdbcType=INTEGER},
+      </if>
+      <if test="teachGrade != null" >
+        teach_grade = #{teachGrade,jdbcType=INTEGER},
+      </if>
+      <if test="teachScores != null" >
+        teach_scores = #{teachScores,jdbcType=INTEGER},
+      </if>
+      <if test="teachAppraise != null" >
+        teach_appraise = #{teachAppraise,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.Teacher" >
+    update x_teacher
+    set th_id = #{thId,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      birth_year = #{birthYear,jdbcType=VARCHAR},
+      major = #{major,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      graduate_school = #{graduateSchool,jdbcType=VARCHAR},
+      is_teacher = #{isTeacher,jdbcType=INTEGER},
+      QQ = #{qq,jdbcType=VARCHAR},
+      connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      teach_sub = #{teachSub,jdbcType=VARCHAR},
+      about_me = #{aboutMe,jdbcType=VARCHAR},
+      teach_time = #{teachTime,jdbcType=VARCHAR},
+      teach_area = #{teachArea,jdbcType=VARCHAR},
+      salary_need = #{salaryNeed,jdbcType=INTEGER},
+      teach_way = #{teachWay,jdbcType=VARCHAR},
+      teach_account = #{teachAccount,jdbcType=INTEGER},
+      teach_sh = #{teachSh,jdbcType=INTEGER},
+      teach_grade = #{teachGrade,jdbcType=INTEGER},
+      teach_scores = #{teachScores,jdbcType=INTEGER},
+      teach_appraise = #{teachAppraise,jdbcType=VARCHAR}
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.QtGettutorMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.QtGettutor" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="qt_title" property="qtTitle" jdbcType="VARCHAR" />
+    <result column="qt_body" property="qtBody" jdbcType="VARCHAR" />
+    <result column="click_times" property="clickTimes" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="qt_auther" property="qtAuther" jdbcType="VARCHAR" />
+    <result column="mana_id" property="manaId" jdbcType="INTEGER" />
+    <result column="g_sh" property="gSh" jdbcType="INTEGER" />
+    <result column="is_show" property="isShow" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, qt_title, qt_body, click_times, update_time, qt_auther, mana_id, g_sh, is_show
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_qt_gettutor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_qt_gettutor
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.QtGettutor" >
+    insert into x_qt_gettutor (id, qt_title, qt_body, 
+      click_times, update_time, qt_auther, 
+      mana_id, g_sh, is_show
+      )
+    values (#{id,jdbcType=INTEGER}, #{qtTitle,jdbcType=VARCHAR}, #{qtBody,jdbcType=VARCHAR}, 
+      #{clickTimes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{qtAuther,jdbcType=VARCHAR}, 
+      #{manaId,jdbcType=INTEGER}, #{gSh,jdbcType=INTEGER}, #{isShow,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.QtGettutor" >
+    insert into x_qt_gettutor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="qtTitle != null" >
+        qt_title,
+      </if>
+      <if test="qtBody != null" >
+        qt_body,
+      </if>
+      <if test="clickTimes != null" >
+        click_times,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="qtAuther != null" >
+        qt_auther,
+      </if>
+      <if test="manaId != null" >
+        mana_id,
+      </if>
+      <if test="gSh != null" >
+        g_sh,
+      </if>
+      <if test="isShow != null" >
+        is_show,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="qtTitle != null" >
+        #{qtTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="qtBody != null" >
+        #{qtBody,jdbcType=VARCHAR},
+      </if>
+      <if test="clickTimes != null" >
+        #{clickTimes,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qtAuther != null" >
+        #{qtAuther,jdbcType=VARCHAR},
+      </if>
+      <if test="manaId != null" >
+        #{manaId,jdbcType=INTEGER},
+      </if>
+      <if test="gSh != null" >
+        #{gSh,jdbcType=INTEGER},
+      </if>
+      <if test="isShow != null" >
+        #{isShow,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.QtGettutor" >
+    update x_qt_gettutor
+    <set >
+      <if test="qtTitle != null" >
+        qt_title = #{qtTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="qtBody != null" >
+        qt_body = #{qtBody,jdbcType=VARCHAR},
+      </if>
+      <if test="clickTimes != null" >
+        click_times = #{clickTimes,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qtAuther != null" >
+        qt_auther = #{qtAuther,jdbcType=VARCHAR},
+      </if>
+      <if test="manaId != null" >
+        mana_id = #{manaId,jdbcType=INTEGER},
+      </if>
+      <if test="gSh != null" >
+        g_sh = #{gSh,jdbcType=INTEGER},
+      </if>
+      <if test="isShow != null" >
+        is_show = #{isShow,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.QtGettutor" >
+    update x_qt_gettutor
+    set qt_title = #{qtTitle,jdbcType=VARCHAR},
+      qt_body = #{qtBody,jdbcType=VARCHAR},
+      click_times = #{clickTimes,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      qt_auther = #{qtAuther,jdbcType=VARCHAR},
+      mana_id = #{manaId,jdbcType=INTEGER},
+      g_sh = #{gSh,jdbcType=INTEGER},
+      is_show = #{isShow,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

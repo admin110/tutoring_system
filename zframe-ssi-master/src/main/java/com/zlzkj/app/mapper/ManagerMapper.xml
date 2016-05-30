@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.ManagerMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.Manager" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="mana_id" property="manaId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="pass_word" property="passWord" jdbcType="VARCHAR" />
+    <result column="show_name" property="showName" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="photo" property="photo" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="connect_phone" property="connectPhone" jdbcType="VARCHAR" />
+    <result column="mana_account" property="manaAccount" jdbcType="INTEGER" />
+    <result column="mana_permission" property="manaPermission" jdbcType="VARCHAR" />
+    <result column="mana_sh" property="manaSh" jdbcType="INTEGER" />
+    <result column="rg_time" property="rgTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, mana_id, user_name, pass_word, show_name, real_name, id_card, photo, area, sex, 
+    connect_phone, mana_account, mana_permission, mana_sh, rg_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_manager
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_manager
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.Manager" >
+    insert into x_manager (id, mana_id, user_name, 
+      pass_word, show_name, real_name, 
+      id_card, photo, area, 
+      sex, connect_phone, mana_account, 
+      mana_permission, mana_sh, rg_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{manaId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{passWord,jdbcType=VARCHAR}, #{showName,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{connectPhone,jdbcType=VARCHAR}, #{manaAccount,jdbcType=INTEGER}, 
+      #{manaPermission,jdbcType=VARCHAR}, #{manaSh,jdbcType=INTEGER}, #{rgTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.Manager" >
+    insert into x_manager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="manaId != null" >
+        mana_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="passWord != null" >
+        pass_word,
+      </if>
+      <if test="showName != null" >
+        show_name,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone,
+      </if>
+      <if test="manaAccount != null" >
+        mana_account,
+      </if>
+      <if test="manaPermission != null" >
+        mana_permission,
+      </if>
+      <if test="manaSh != null" >
+        mana_sh,
+      </if>
+      <if test="rgTime != null" >
+        rg_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="manaId != null" >
+        #{manaId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="passWord != null" >
+        #{passWord,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="connectPhone != null" >
+        #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="manaAccount != null" >
+        #{manaAccount,jdbcType=INTEGER},
+      </if>
+      <if test="manaPermission != null" >
+        #{manaPermission,jdbcType=VARCHAR},
+      </if>
+      <if test="manaSh != null" >
+        #{manaSh,jdbcType=INTEGER},
+      </if>
+      <if test="rgTime != null" >
+        #{rgTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.Manager" >
+    update x_manager
+    <set >
+      <if test="manaId != null" >
+        mana_id = #{manaId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="passWord != null" >
+        pass_word = #{passWord,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        show_name = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="connectPhone != null" >
+        connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="manaAccount != null" >
+        mana_account = #{manaAccount,jdbcType=INTEGER},
+      </if>
+      <if test="manaPermission != null" >
+        mana_permission = #{manaPermission,jdbcType=VARCHAR},
+      </if>
+      <if test="manaSh != null" >
+        mana_sh = #{manaSh,jdbcType=INTEGER},
+      </if>
+      <if test="rgTime != null" >
+        rg_time = #{rgTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.Manager" >
+    update x_manager
+    set mana_id = #{manaId,jdbcType=INTEGER},
+      user_name = #{userName,jdbcType=VARCHAR},
+      pass_word = #{passWord,jdbcType=VARCHAR},
+      show_name = #{showName,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      connect_phone = #{connectPhone,jdbcType=VARCHAR},
+      mana_account = #{manaAccount,jdbcType=INTEGER},
+      mana_permission = #{manaPermission,jdbcType=VARCHAR},
+      mana_sh = #{manaSh,jdbcType=INTEGER},
+      rg_time = #{rgTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlzkj.app.mapper.MessageMapper" >
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.Message" >
+    <id column="rg_id" property="rgId" jdbcType="INTEGER" />
+    <result column="mess_name" property="messName" jdbcType="VARCHAR" />
+    <result column="mess_phone" property="messPhone" jdbcType="INTEGER" />
+    <result column="mess_time" property="messTime" jdbcType="TIMESTAMP" />
+    <result column="mess_body" property="messBody" jdbcType="VARCHAR" />
+    <result column="QQ" property="qq" jdbcType="VARCHAR" />
+    <result column="e_mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="mess_deal" property="messDeal" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rg_id, mess_name, mess_phone, mess_time, mess_body, QQ, e_mail, mess_deal
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from x_message
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from x_message
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.Message" >
+    insert into x_message (rg_id, mess_name, mess_phone, 
+      mess_time, mess_body, QQ, 
+      e_mail, mess_deal)
+    values (#{rgId,jdbcType=INTEGER}, #{messName,jdbcType=VARCHAR}, #{messPhone,jdbcType=INTEGER}, 
+      #{messTime,jdbcType=TIMESTAMP}, #{messBody,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{eMail,jdbcType=VARCHAR}, #{messDeal,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zlzkj.app.model.Message" >
+    insert into x_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        rg_id,
+      </if>
+      <if test="messName != null" >
+        mess_name,
+      </if>
+      <if test="messPhone != null" >
+        mess_phone,
+      </if>
+      <if test="messTime != null" >
+        mess_time,
+      </if>
+      <if test="messBody != null" >
+        mess_body,
+      </if>
+      <if test="qq != null" >
+        QQ,
+      </if>
+      <if test="eMail != null" >
+        e_mail,
+      </if>
+      <if test="messDeal != null" >
+        mess_deal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rgId != null" >
+        #{rgId,jdbcType=INTEGER},
+      </if>
+      <if test="messName != null" >
+        #{messName,jdbcType=VARCHAR},
+      </if>
+      <if test="messPhone != null" >
+        #{messPhone,jdbcType=INTEGER},
+      </if>
+      <if test="messTime != null" >
+        #{messTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="messBody != null" >
+        #{messBody,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="messDeal != null" >
+        #{messDeal,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zlzkj.app.model.Message" >
+    update x_message
+    <set >
+      <if test="messName != null" >
+        mess_name = #{messName,jdbcType=VARCHAR},
+      </if>
+      <if test="messPhone != null" >
+        mess_phone = #{messPhone,jdbcType=INTEGER},
+      </if>
+      <if test="messTime != null" >
+        mess_time = #{messTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="messBody != null" >
+        mess_body = #{messBody,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        QQ = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        e_mail = #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="messDeal != null" >
+        mess_deal = #{messDeal,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.Message" >
+    update x_message
+    set mess_name = #{messName,jdbcType=VARCHAR},
+      mess_phone = #{messPhone,jdbcType=INTEGER},
+      mess_time = #{messTime,jdbcType=TIMESTAMP},
+      mess_body = #{messBody,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      e_mail = #{eMail,jdbcType=VARCHAR},
+      mess_deal = #{messDeal,jdbcType=INTEGER}
+    where rg_id = #{rgId,jdbcType=INTEGER}
+  </update>
+</mapper>

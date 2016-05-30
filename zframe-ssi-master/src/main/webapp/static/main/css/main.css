@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%}
+a{color:#172c45;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+
+.fleft{float:left;}
+.fright{float:right;}
+.undis{display:none}
+.dis{display:block}
+
+@media screen{
+.fl,.layout .fl,.chief{float:left;display:inline}
+.fr,.layout .fr,.extra{float:right;display:inline}
+.fn{font-weight:bold;}
+.layout{width:1000px;margin:0 auto;}
+.leftArea{width:660px;float:left;}
+.rightArea{width:318px;border-top:1px solid #6daaea;background:#fff;float:right;}
+.mt8{margin-top:8px}
+.mt12{margin-top:12px}
+.mt15{margin-top:15px}
+.mb10{margin-bottom:10px}
+#guess{position:absolute;top:-9999px;left:-9999px;}
+}
